@@ -1,11 +1,18 @@
 import MessageBox from "./components/MessageBox";
 import AccountContext from "./context/AccountContext";
+import Theme from "./ThemeProvider/Theme";
 
 function App() {
   return (
-    <AccountContext>
+    <Theme>
+          <AccountContext>
   <MessageBox/>
     </AccountContext>
+
+
+
+    </Theme>
+
 
   );
 }
