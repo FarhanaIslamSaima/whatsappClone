@@ -1,7 +1,10 @@
 
-import React from 'react';
+import React,{useContext} from 'react';
 import {withStyles,Dialog,makeStyles,Box,Typography,AppBar,Toolbar} from '@material-ui/core'
 import pic from '../assets/code.png'
+import { AccProvider } from '../../context/AccountContext';
+import { GoogleLogin } from 'react-google-login';
+
 const style={
     DialogPaper:{
         minWidth:'1000px',
@@ -39,6 +42,16 @@ const useStyle=makeStyles({
 })
 const Login = ({classes}) => {
   const useClass=useStyle();
+  const {account,setAccount}=useContext(AccProvider);
+  const handleLogin=async(response)=>{
+    console.log(response)
+
+
+  }
+  const handleFail=async(response)=>{
+    console.log(response)
+
+  }
     return (
       <>
             <AppBar >
@@ -68,6 +81,14 @@ const Login = ({classes}) => {
        <Box className={useClass.rightContainer}>
         <Box className={useClass.displayImage}>
         <img src={pic} className={useClass.image}/>
+        <GoogleLogin
+    clientId="957266426303-107bdb8bcsvr3mvb0823aklpj5cim4vh.apps.googleusercontent.com"
+    buttonText="Login"
+    isSignedIn={true}
+    onSuccess={handleLogin}
+    onFailure={handleFail}
+    cookiePolicy={'single_host_origin'}
+  />
 
         </Box>
       
