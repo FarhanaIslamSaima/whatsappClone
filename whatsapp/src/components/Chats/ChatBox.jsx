@@ -1,16 +1,64 @@
 import React from 'react';
-import {Box,Dialog,withStyles} from '@material-ui/core'
+import LeftSideBar from './LeftSideBar';
+import RightChatBox from './RightChatBox';
+import {Box,Dialog,withStyles,AppBar,Toolbar,makeStyles} from '@material-ui/core'
 const style={
     dialogpaper:{
-       width:'400px'
+       minWidth:'1800px',
+      borderRadius:'0px',
+       height:'1000px'
     }
 }
+const useStyle=makeStyles({
+    header:{
+        height:'150px',
+    backgroundColor:'#128C7E'
+    },
+    container:{
+        display:'flex'
+
+    }
+    ,
+    leftContainer:{
+        width:'40%'
+
+    },
+    rightContainer:{
+        width:'60%'
+
+    }
+
+})
 
 const ChatBox = ({classes}) => {
+    const useClass=useStyle();
     return (
+        <>
+           <AppBar >
+        <Toolbar className={useClass.header}>
+         
+
+        
+
+        </Toolbar>
+      </AppBar>
+     
         <Dialog open={true} classes={{paper:classes.dialogpaper}}>
-            Hello
+          <Box className={useClass.container}>
+            <Box className={useClass.leftContainer}>
+                <LeftSideBar/>
+
+            </Box>
+            <Box className={useClass.rightContainer}>
+                <RightChatBox/>
+
+</Box>
+
+          </Box>
         </Dialog>
+
+
+        </>
 
     );
 };
