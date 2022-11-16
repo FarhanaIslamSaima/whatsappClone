@@ -44,7 +44,9 @@ const Login = ({classes}) => {
   const useClass=useStyle();
   const {account,setAccount}=useContext(AccProvider);
   const handleLogin=async(response)=>{
-    console.log(response)
+
+    setAccount(response.profileObj);
+    console.log(account);
 
 
   }
