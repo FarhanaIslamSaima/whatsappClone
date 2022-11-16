@@ -5,7 +5,7 @@ export const AccProvider=createContext(null);
 
 const AccountContext = ({children}) => {
     const [account,setAccount]=useState();
-    console.log(account);
+   
     return (
         <AccProvider.Provider value={{
             account,

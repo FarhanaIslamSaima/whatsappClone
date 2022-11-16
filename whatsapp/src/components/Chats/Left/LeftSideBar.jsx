@@ -1,11 +1,10 @@
 import React from 'react';
+import Header from './Header';
 
 const LeftSideBar = () => {
     return (
-        <div>
-            This is left side;
-            
-        </div>
+      <Header/>
+      
     );
 };
 

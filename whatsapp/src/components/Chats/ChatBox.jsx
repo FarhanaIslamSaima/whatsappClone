@@ -1,6 +1,6 @@
 import React from 'react';
-import LeftSideBar from './LeftSideBar';
-import RightChatBox from './RightChatBox';
+import LeftSideBar from './Left/LeftSideBar';
+import RightChatBox from './Right/RightChatBox';
 import {Box,Dialog,withStyles,AppBar,Toolbar,makeStyles} from '@material-ui/core'
 const style={
     dialogpaper:{
@@ -20,11 +20,11 @@ const useStyle=makeStyles({
     }
     ,
     leftContainer:{
-        width:'40%'
+        width:'25%'
 
     },
     rightContainer:{
-        width:'60%'
+        width:'75%'
 
     }
 
