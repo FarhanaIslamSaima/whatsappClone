@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser';
+import Connect from './database/database.js';
 const app=express();
 const port='8000'
 app.use(cors());
@@ -16,4 +17,5 @@ app.listen(port,()=>{
         console.log(error);
     }
 })
+Connect();
 
