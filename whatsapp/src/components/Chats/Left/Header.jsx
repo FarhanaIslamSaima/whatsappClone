@@ -4,7 +4,8 @@ import {Box,makeStyles} from '@material-ui/core'
 import GroupIcon from '@material-ui/icons/Group'
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
+import MoreVert from './MoreVert';
+
 const useStyle=makeStyles({
     container:{
     display:'flex',
@@ -50,8 +51,7 @@ const Header = () => {
             <Box className={classes.rightContainer}>
                 <GroupIcon/>
                 <DonutLargeIcon/>
-                <ChatIcon/>
-                <MoreVertIcon/>
+            <MoreVert/>
 
 
             </Box>
