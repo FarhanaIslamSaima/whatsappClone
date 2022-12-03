@@ -4,6 +4,7 @@ import {withStyles,Dialog,makeStyles,Box,Typography,AppBar,Toolbar} from '@mater
 import pic from '../assets/code.png'
 import { AccProvider } from '../../context/AccountContext';
 import { GoogleLogin } from 'react-google-login';
+import { addUser } from '../../Service/api';
 
 const style={
     DialogPaper:{
@@ -46,6 +47,7 @@ const Login = ({classes}) => {
   const handleLogin=async(response)=>{
 
     setAccount(response.profileObj);
+    addUser(response.profileObj);
     console.log(account);
 
 
