@@ -4,7 +4,7 @@ const UserSchema=new mongoose.Schema({
     googleId:{
         type:String
     },
-    image:{
+    imageUrl:{
         type:String,
         require:true
     },
