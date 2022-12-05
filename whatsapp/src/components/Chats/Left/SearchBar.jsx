@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
       color:'white'
     },
     inputRoot: {
-      color: 'white',
+      color: 'black',
       background:'lightgrey',
       width:'100%',
       borderRadius:'10px',

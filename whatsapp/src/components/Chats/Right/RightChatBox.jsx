@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from './Header';
 
 const RightChatBox = () => {
     return (
-        <div>
-            This is chatBox
-        </div>
+       <>
+       <Header/>
+       </>
     );
 };
 

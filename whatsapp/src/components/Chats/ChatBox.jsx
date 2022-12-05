@@ -20,8 +20,9 @@ const useStyle=makeStyles({
     }
     ,
     leftContainer:{
-        width:'25%'
-
+        width:'25%',
+        height:'1000px',
+         borderRight:'1px solid #eddfdf'
     },
     rightContainer:{
         width:'75%'

@@ -22,3 +22,14 @@ export const getAllUser=async()=>{
     }
 
 }
+export const addUserEach=async(data)=>{
+    try{
+        const response=await axios.post(`${url}/post/user/each`,data);
+        return response;
+
+    }
+    catch(error){
+        return error;
+    }
+
+}

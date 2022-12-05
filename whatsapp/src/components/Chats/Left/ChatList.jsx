@@ -1,8 +1,10 @@
 import React,{useContext,useState} from 'react';
 import { useEffect } from 'react';
 import { AccProvider } from '../../../context/AccountContext';
+import { PersonProfile } from '../../../context/PersonContext';
 import { getAllUser } from '../../../Service/api';
 import {Typography,Box,makeStyles} from '@material-ui/core'
+import { addUserEach } from '../../../Service/api';
 const useStyle=makeStyles({
     image:{
         borderRadius:'50%',
@@ -16,7 +18,8 @@ const useStyle=makeStyles({
     },
     text:{
         padding:'20px 10px',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        cursor:'pointer'
 
     }
 })
@@ -24,8 +27,10 @@ const useStyle=makeStyles({
 const ChatList = () => {
     const classes=useStyle();
     const {account}=useContext(AccProvider);
-    console.log(account);
+    const {person,setPerson}=useContext(PersonProfile);
+
     const [user,setUser]=useState();
+  
 
 
     useEffect(()=>{
@@ -39,11 +44,22 @@ const ChatList = () => {
         getUserData();
 
     },[])
+    const handleClick=async(item)=>{
+        const data={
+            senderId:account.googleId,
+            recieverId:item.googleId
+        }
+       await addUserEach(data);
+        setPerson(item);
+    
+
+    }
+    console.log(person);
 
     return (
    user && user.map(item=>(
      item.googleId!=account.googleId &&
-    <Box className={classes.container}>
+    <Box className={classes.container} onClick={(e)=>handleClick(item)}>
     
         <img src={item.imageUrl} className={classes.image}/>
         <Typography className={classes.text}>{item.name}</Typography>
