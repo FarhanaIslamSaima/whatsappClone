@@ -1,9 +1,19 @@
 import React,{useContext} from 'react';
-import {Box,makeStyles} from '@material-ui/core'
+import {Box,makeStyles,Typography} from '@material-ui/core'
 import { PersonProfile } from '../../../context/PersonContext';
 const useStyle=makeStyles({
     header:{
-        display:'flex'
+        display:'flex',
+        background:'lightgrey'
+    },
+    image:{
+      borderRadius:'50%',
+      width:'50px',
+      padding:'10px'
+    },
+    leftSide:{
+      display:'flex',
+      alignItems:'center'
     }
 
 })
@@ -15,7 +25,8 @@ const Header = () => {
     return (
       <Box className={classes.header}>
         <Box className={classes.leftSide}>
-        <img src={person.imageUrl}/>
+        <img src={person.imageUrl} className={classes.image}/>
+        <Typography>{person.name}</Typography>
         </Box>
         <Box className={classes.rightSide}>
 

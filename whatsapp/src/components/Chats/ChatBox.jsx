@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import LeftSideBar from './Left/LeftSideBar';
 import RightChatBox from './Right/RightChatBox';
+import pic from './assets/pic.jpg'
+import { PersonProfile } from '../../context/PersonContext';
 import {Box,Dialog,withStyles,AppBar,Toolbar,makeStyles} from '@material-ui/core'
 const style={
     dialogpaper:{
@@ -32,6 +34,7 @@ const useStyle=makeStyles({
 })
 
 const ChatBox = ({classes}) => {
+    const {person}=useContext(PersonProfile);
     const useClass=useStyle();
     return (
         <>
@@ -51,7 +54,7 @@ const ChatBox = ({classes}) => {
 
             </Box>
             <Box className={useClass.rightContainer}>
-                <RightChatBox/>
+               {person?<RightChatBox/>:<img src={pic}></img>} 
 
 </Box>
 
