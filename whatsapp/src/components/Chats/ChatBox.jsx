@@ -8,7 +8,7 @@ const style={
     dialogpaper:{
        minWidth:'1800px',
       borderRadius:'0px',
-       height:'1000px'
+       height:'900px'
     }
 }
 const useStyle=makeStyles({
@@ -23,7 +23,7 @@ const useStyle=makeStyles({
     ,
     leftContainer:{
         width:'25%',
-        height:'1000px',
+        height:'80px',
          borderRight:'1px solid #eddfdf'
     },
     rightContainer:{
